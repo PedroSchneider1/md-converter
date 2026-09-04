@@ -32,7 +32,7 @@ def build_converter() -> DocumentConverter:
     """Built once and reused for every file."""
     pipeline_options = ThreadedPdfPipelineOptions(
         accelerator_options=AcceleratorOptions(
-            device=AcceleratorDevice.CUDA,
+            device=AcceleratorDevice.AUTO,
             num_threads=8,
         ),
         layout_batch_size=64,

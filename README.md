@@ -6,8 +6,12 @@ Recursively converts every PDF under a folder to Markdown using [Docling](https:
 
 - Python 3.9+
 - [Docling](https://pypi.org/project/docling/) (a recent version that includes the threaded PDF pipeline)
+<<<<<<< HEAD
 - NVIDIA GPU with CUDA (the accelerator device is hardcoded to CUDA — see [Notes](#notes) to run on CPU)
 
+=======
+  >A GPU is not mandatory, but is recommended
+>>>>>>> dfff627 (fix: auto GPU detection, updated README)
 ```bash
 pip install docling
 ```
@@ -52,5 +56,4 @@ python converter.py ./docs --keep-images
 
 - **OCR is disabled** (`do_ocr=False`), so scanned/image-only PDFs will produce little or no text. Set `do_ocr=True` in `build_converter()` if you need OCR.
 - **Table structure recognition is enabled**, so tables are exported as Markdown tables.
-- **No GPU?** Change `AcceleratorDevice.CUDA` to `AcceleratorDevice.CPU` (or `AcceleratorDevice.AUTO`) in `build_converter()`.
 - Page and picture images are not generated, keeping conversion fast and output lightweight.
